@@ -1,0 +1,14 @@
+{
+  "name": "ctrack-spa",
+  "version": "0.1.0",
+  "description": "This module contains the single page application.",
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "keywords": [
+    "spa"
+  ],
+  "author": "Leon Carlo Valencia",
+  "license": "ISC"
+}

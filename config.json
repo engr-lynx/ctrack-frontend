@@ -1,0 +1,6 @@
+{
+  "name": "ctrack",
+  "stage": "sb",
+  "region": "us-east-1",
+  "deploymentBucket": "ctrack-spa-deployments"
+}
