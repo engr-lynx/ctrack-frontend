@@ -9,7 +9,7 @@ provider:
 
 
 custom:
-  s3Bucket: ctrack-temp-3
+  s3Bucket: ctrack-spa-1
 
 
 resources:

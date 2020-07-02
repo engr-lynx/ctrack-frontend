@@ -1,25 +1,18 @@
-function renderApp() {
-  var content;
-  if (window.location.pathname === '/about') {
-    content = '<div>Welcome to the About page</div>'
-  } else if (window.location.pathname === '/') {
-    content = '<div>Welcome Serverless Developer :)</div>'
-  }
+$(document).ready(function() {
 
-  var main = document.getElementsByTagName('main')[0];
-  main.innerHTML = content;
-}
-
-function navigate(evt) {
-  evt.preventDefault();
-  var href = evt.target.getAttribute('href');
-  window.history.pushState({}, undefined, href);
-  renderApp();
-}
-
-document.addEventListener('DOMContentLoaded', function(event) {
-  var nav = document.getElementsByTagName('nav')[0];
-  nav.addEventListener("click", navigate, false);
-
-  renderApp();
+  $.ajax({
+    url: 'https://9kxxoe5qhh.execute-api.ap-southeast-1.amazonaws.com/sb/',
+    method: 'get',
+    crossDomain: true,
+    dataType: 'json',
+    success: function(data) {
+      const bar = $('#notification-bar');
+      data.forEach((item) => {
+        bar.append('<h2 class="location">'+item.location+'</h2><span class="count">'+item.count+'</span>');
+      })
+    },
+    error: function() {
+      $('#notification-bar').text('An error occurred');
+    }
+  });
 });
